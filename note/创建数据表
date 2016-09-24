@@ -64,22 +64,24 @@ CREATE TABLE 表名(
     );
 
 #索引
-  主键索引：
+  1、主键索引：
             防止创建重复的值
             唯一确定数据表里的一条特定数据记录的位置
             一张表里只能指定一个主键，主键的值不能为空 
             primary key
-  唯一索引：            
+  2、唯一索引：            
             可以防止创建重复的值
             一个表可以有多个唯一索引
             unique
-  常规索引：
+  3、常规索引：
             可以提高查找速度，但是减慢数据列上添加、删除、修改操作
-            create index 索引名 on 表名(列1，列2,...)；    在表的列1、2上创建索引
-            drop index 索引名 on 表名；
             
-            key和index意思完全一样，都是创建索引，如下：
-        例：
+      单独使用：create index 索引名 on 表名(列1，列2,...)；    在表的列1、2上创建索引
+                drop index 索引名 on 表名；
+            
+                key和index意思完全一样，都是创建索引，如下：
+      创建表时创建：
+      例：
             create table tab2(
                 id int,
                 uid int,
@@ -90,7 +92,20 @@ CREATE TABLE 表名(
                 key key1(sid)
             );
 
-
+  4、全文索引：
+        fulltext,MyISAM表类型索引，只有在varchar,char,text文本字符串上使用
+        
+        create table books(
+                id int,
+                bookname varchar(20),
+                price double,
+                detail text,
+                fulltext(bookname,detail),
+                index indx(price),
+                primary key(id)
+        );
+        
+        select bookname,price from books where MATCH(detail) AGAINST('php');
 
 
 
