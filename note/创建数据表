@@ -39,14 +39,32 @@ CREATE TABLE 表名(
         注意：创建表示最好不用这些时间格式（PHP中时间戳是一个从1970-1-1 00:00:00整数）
               最好用整数保存时间 time();
 
-4、数据字段属性：
+#数据字段属性：
   unsigned:
         只能用于数值型字段，数据范围扩大一倍 -128~127 ==> 0~255
   zerofill:
         用于数值型字段，加前导0
         该字段自动应用UNSIGNED
   AUTO_INCREMENT:
-        只能是整数，数据每增加一条就会自动加一
+        只能是整数，数据每增加一条就会自动加一，字段的值不允许重复，要求可以同时设置为primary key
+  null  默认值为空
+  not null      默认非空
+
+注意：在创建数据表时，每个字段都不要插入NULL，因为数据库的数据转为PHP数据时，整数型null转为0，字符型null转为''。
+
+  default:
+        设置缺省值
+
+  例：
+    CREATE TABLE tab1(
+        id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(10) NOT NULL DEFAULT '',
+        age INT UNSIGNED NOT NULL DEFAULT 0,
+        height DOUBLE(3,2) DEFAULT 0.00
+    );
+
+
+
 
 
 
