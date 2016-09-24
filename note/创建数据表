@@ -74,8 +74,25 @@ CREATE TABLE 表名(
             一个表可以有多个唯一索引
             unique
   常规索引：
-  
-  
+            可以提高查找速度，但是减慢数据列上添加、删除、修改操作
+            create index 索引名 on 表名(列1，列2,...)；    在表的列1、2上创建索引
+            drop index 索引名 on 表名；
+            
+            key和index意思完全一样，都是创建索引，如下：
+        例：
+            create table tab2(
+                id int,
+                uid int,
+                sid int,
+                pid int,
+                primary key(id),
+                index ind1(uid),
+                key key1(sid)
+            );
+
+
+
+
 
 
 
