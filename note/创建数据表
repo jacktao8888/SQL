@@ -1,1 +1,10 @@
+#数据值和列类型
+1、数值型： 非常小的整形  1字节   TINYINT   SIGNED/UNSIGNED
+            较小的整形    2字节   SMALLINT  SIGNED/UNSIGNED
+            中等的整形    3字节   MEDIUMINT SIGNED/UNSIGNED
+            标准的整形    4字节   INT       SIGNED/UNSIGNED
+            大的整形      8字节   BIGINT    SIGNED/UNSIGNED
 
+2、字符型：
+
+3、日期型：
