@@ -1,9 +1,18 @@
 #数据值和列类型
-1、数值型： 非常小的整形  1字节   TINYINT   SIGNED/UNSIGNED
+1、数值型： 
+        整形：
+            非常小的整形  1字节   TINYINT   SIGNED/UNSIGNED
             较小的整形    2字节   SMALLINT  SIGNED/UNSIGNED
-            中等的整形    3字节   MEDIUMINT SIGNED/UNSIGNED
+            中等大小整形  3字节   MEDIUMINT SIGNED/UNSIGNED
             标准的整形    4字节   INT       SIGNED/UNSIGNED
             大的整形      8字节   BIGINT    SIGNED/UNSIGNED
+      浮点型：
+            float(M,D)    4字节     M：位数 D:小数精度  
+            double(M,D)   8字节     
+      定点数：
+            decimal(M,D)
+      注意：浮点型和定点数的区别，对浮点数来说，插入的数值的精度比规定的精度大时，会被四舍五入；
+            对定点数来说，插入的数值的精度比规定的精度大时，会被保留。
 
 2、字符型：
 
