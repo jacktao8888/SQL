@@ -15,5 +15,24 @@
             对定点数来说，插入的数值的精度比规定的精度大时，会被保留。
 
 2、字符型：
+        char(n)            255个字符    固定长度        插入的字符长度超出n，会被截断
+        varchar(n)         255个字符    可变长度        存储大小会随着插入的字符长度而改变<=n+1
+        
+        text    文本数据
+        blob    二进制数据
+        
+        ENUM("a","b","c","d")   最多65535       且一次只能有一个值
+        SET     集合            最多64          一次可以用集合中的多个值
 
 3、日期型：
+        DATE            YYYY-MM-DD或者YYYYMMDD（位数够就行）
+        TIME            hh:mm:ss或者hhmmss
+        DATETIME        YYYY-MM-DD hh:mm:ss
+        TIMESTAMP       YYYYMMDDhhmmss
+        YEAR            YYYY
+        注意：创建表示最好不用这些时间格式（PHP中时间戳是一个从1970-1-1 00:00:00整数）
+              最好用整数保存时间 time();
+
+
+
+
