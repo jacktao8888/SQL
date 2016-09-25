@@ -19,6 +19,9 @@ mysql_affected_rows();  //影响的行数
 $cols = mysql_num_fields($result);     //获取字段列数
 $rows = mysql_num_rows($result);       //获取行数
 
+for($i=0;$i<cols;$i++){
+  echo '<th>'.mysql_field_name($result,$i).'</th>';
+}
 
 mysql_fetch_row($result);     //返回索引数组
 mysql_fetch_assoc($result);   //返回关联数组
