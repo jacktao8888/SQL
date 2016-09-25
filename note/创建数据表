@@ -161,9 +161,12 @@ CREATE TABLE 表名(
   在cmd命令行中，
         mysqldump -u root -p --default-character-set=utf8 -d 库名 > D:\\wamp\www\123.sql
 
-
-
-
-  
+#修改表结构
+        ？ alter table           查看修改表结构的用法
+        alter table 旧表名 rename as 新表名；          修改表名
+        alter table 表名 add name varchar(10) not null;
+        alter table 表名 add age int not null default 0 after name;
+        alter table 表名 change 旧字段名 新字段名 新字段类型；
+        
   
   
