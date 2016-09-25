@@ -69,3 +69,11 @@ DDL DML DQL DCL
 
 ##limit count 显示的记录数目
 
+##group by 
+和下面的函数组合使用
+count()
+sum()
+avg()
+max()
+min()
+
