@@ -140,6 +140,28 @@ CREATE TABLE 表名(
         UTF-16
         UTF-8           推荐使用，1-4个字节，可变长字符集
 
+     例：
+        create database 库名 default character set gbk collate gbk_chinese_ci;
+        create table 表名() type=InnoDB default character set gbk collate gbk_chinese_ci;
+
+##客户端与服务器交互时：
+  character_set_client
+  character_set_connection
+  character_set_result
+  
+  set names 字符集；        同时修改以上三个值
+  如：set names gbk;
+  
+  use 库名；
+  alter database character set utf8;
+  
+#备份数据库中的表
+  在cmd命令行中，
+        mysqldump -u root -p --default-character-set=utf8 -d 库名 > D:\\wamp\www\123.sql
 
 
 
+
+  
+  
+  
