@@ -1,0 +1,9 @@
+DDL DML DQL DCL
+
+#DDL  数据定义语言，用于定义和管理数据对象（库、表、索引、视图），包括数据库、数据表等。
+  CREATE DROP ALTER
+  
+#DML  数据操作语言
+  INSERT  DELETE UPDATE
+ 
+#DQL  数据查询语句（占数据库操作任务的60%）
