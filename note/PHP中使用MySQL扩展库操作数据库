@@ -12,9 +12,12 @@ mysql_error();
 $sql = "create table tab1(id int)";
 $result = mysql_query($sql);
 
+mysql_free_result($result);   //用完释放结果集
+  
 mysql_insert_id();      //最后自动增长的id
 mysql_affected_rows();  //影响的行数
-
+mysql_num_fields();     //获取字段列数
+mysql_num_rows();       //获取行数
 
 
 mysql_fetch_row($result);     //返回索引数组
