@@ -2,7 +2,7 @@ CREATE TABLE 表名(
         字段1 列类型 [属性] [索引],
         字段2 列类型 [属性] [索引],
         ...
-);
+) [表类型];
 
 #列类型
 1、数值型： 
@@ -107,7 +107,38 @@ CREATE TABLE 表名(
         
         select bookname,price from books where MATCH(detail) AGAINST('php');
 
+#表类型
+    查看MySQL支持的表类型       show engines;
+    
+    MySQL有12种存储引擎，主要学MyISAM、InnoDB，设置表类型如下：
+        CREATE TABLE 表名() type InnoDB;
+        CREATE TABLE 表名() engine InnoDB;
+  1、MyISAM:
+        OPTIMIZE TABLE 表名；      //优化数据表操作过程中产生的碎片
+  2、InnoDB:
+        支持MyISAM不支持的功能
+        缺点占用空间大，速度慢
 
+        功能      MyISAM      InnoDB
+        事务处理  不支持       支持
+        数据行锁定 不支持       支持
+        外键约束    不支持     支持
+        表空间占用   相对小     相对大，最大2倍
+        全文索引    支持      不支持
+
+#MySQL默认字符集
+        查看MySQL支持的字符集   show character set;
+        ACSII
+        ISO-8859-1/latin1
+        gb2312-80
+        gb13000
+        GBK             可以使用，1个汉字2个字节，定长字符集
+        GB18030
+        
+        UTF-32
+        USC-2
+        UTF-16
+        UTF-8           推荐使用，1-4个字节，可变长字符集
 
 
 
