@@ -22,7 +22,7 @@ DDL DML DQL DCL
   修改、删除、查询时，只要条件写好，就能准确操作！
 
 #DQL  数据查询语句（占数据库操作任务的60%）
-  SELECT [ALL | DISTINCT]
+  SELECT [ALL | DISTINCT]                 //DISTINCT查询整个列表，取消重复的数据
          {*|表名.*|[表.]字段1[as alias1][,[表.]字段2[as alias2]][...]}
   from 表名
   [where ...]
@@ -30,4 +30,9 @@ DDL DML DQL DCL
   [HAVING ...]
   [ORDER BY ...]
   [LIMIT count]
+  
+  如：
+      select name as username,age nianling from tab1;   //username、nianling是别名
+  
+  
   
