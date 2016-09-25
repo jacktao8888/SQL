@@ -76,4 +76,8 @@ sum()
 avg()
 max()
 min()
+having
+
+例：
+  select cid,count(*),price,sum(price),min(price),max(price),avg(price) from tab1 t1 group by cid having avg(price)>500;
 
