@@ -1,0 +1,27 @@
+
+$link = mysql_connect("localhost","root","123456");
+
+mysql_select_db("myDB",$link);
+
+mysql_close();
+
+mysql_errno();
+
+mysql_error();
+
+$sql = "create table tab1(id int)";
+$result = mysql_query($sql);
+
+mysql_insert_id();      //最后自动增长的id
+mysql_affected_rows();  //影响的行数
+
+
+
+mysql_fetch_row($result);     //返回索引数组
+mysql_fetch_assoc($result);   //返回关联数组
+mysql_fetch_array($result);   //返回索引和关联数组
+mysql_fetch_object($result);  //返回对象，不常用
+
+
+
+
