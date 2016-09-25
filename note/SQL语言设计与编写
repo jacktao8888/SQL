@@ -33,6 +33,29 @@ DDL DML DQL DCL
   
   如：
       select name as username,age nianling from tab1;   //username、nianling是别名
+      select price，price*0.8 dazhe from tab1；
   
+  逻辑运算符：&& || ！
   
-  
+  比较运算符：
+          != / <>
+          =       等于
+          <=>     和=等于作用一样，但是可以用于null比较
+          >=
+          <=
+          IS NULL
+          IS NOT NULL
+          BETWEEN  AND 
+          NOT BETWEEN AND
+          LIKE                模糊查询  通配符"_"表示任意一个字符 "%"表示0个或任意多个字符
+          NOT LIKE
+          IN
+          REGEXP RLIKE
+          
+          
+          
+          
+          
+          
+
+
