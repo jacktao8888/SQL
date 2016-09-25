@@ -49,13 +49,16 @@ DDL DML DQL DCL
           NOT BETWEEN AND
           LIKE                模糊查询  通配符"_"表示任意一个字符 "%"表示0个或任意多个字符
           NOT LIKE
-          IN
-          REGEXP RLIKE
+          IN                  IN()  列表
+          REGEXP RLIKE        正则匹配查询
           
-          
-          
-          
-          
+#多表查询（连接查询）
+        
+        //name、age既在tab1数据字段里面又在tab2字段里面
+        select t1.name,t1.age,t2.name,t2.age from tab1 t1,tab2 as t2 where t1.id = t2.cid;       
+
+#嵌套查询   子查询
+        select * from tab2 t2 where t2.id1 in (select * from tab1 t1 where t1.name like '%php%');
           
 
 
