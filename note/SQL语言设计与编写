@@ -52,13 +52,20 @@ DDL DML DQL DCL
           IN                  IN()  列表
           REGEXP RLIKE        正则匹配查询
           
-#多表查询（连接查询）
+##多表查询（连接查询）
         
         //name、age既在tab1数据字段里面又在tab2字段里面
         select t1.name,t1.age,t2.name,t2.age from tab1 t1,tab2 as t2 where t1.id = t2.cid;       
 
-#嵌套查询   子查询
+##嵌套查询   子查询
         select * from tab2 t2 where t2.id1 in (select * from tab1 t1 where t1.name like '%php%');
           
+##order by排序
+        select * from tab1 order by age;                从小到大排序
+        select * from tab1 order by age desc limit 10;  倒序排序，显示10条记录
 
+        select * from tab1 where id<10 order by id desc limit 0,1;    取出id=10记录对应的上一条的记录，而且id不用一定要为9！！
+        select * from tab1 where id>10 order by id asc limit 0,1;     取出id=10记录对应的下一条的记录，而且id不用一定要为11！！
+
+##limit count 显示的记录数目
 
