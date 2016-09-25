@@ -155,6 +155,8 @@ CREATE TABLE 表名(
   use 库名；
   alter database character set utf8;
   
+  alter table 表名 character set utf8;
+  
 #备份数据库中的表
   在cmd命令行中，
         mysqldump -u root -p --default-character-set=utf8 -d 库名 > D:\\wamp\www\123.sql
