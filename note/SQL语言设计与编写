@@ -3,7 +3,31 @@ DDL DML DQL DCL
 #DDL  数据定义语言，用于定义和管理数据对象（库、表、索引、视图），包括数据库、数据表等。
   CREATE DROP ALTER
   
+  create database 库名；
+  create table 表名;
+  drop database 库名；
+  drop table 表名;
+  alter database character set utf8;
+  alter tabl 表名 xxxx;
+  
 #DML  数据操作语言
   INSERT  DELETE UPDATE
- 
+  insert into 表名(col1,col2,...) values(val1,val2,...);
+  insert into 表名 values()，(),();    //必须设置所有的数据字段,可以插入多行记录
+   
+  update 表名 set 字段名=值 [条件]；
+
+  delete from 表名 [条件]；
+
+  修改、删除、查询时，只要条件写好，就能准确操作！
+
 #DQL  数据查询语句（占数据库操作任务的60%）
+  SELECT [ALL | DISTINCT]
+         {*|表名.*|[表.]字段1[as alias1][,[表.]字段2[as alias2]][...]}
+  from 表名
+  [where ...]
+  [GROUP BY ...]
+  [HAVING ...]
+  [ORDER BY ...]
+  [LIMIT count]
+  
