@@ -125,7 +125,15 @@ CREATE TABLE 表名(
         外键约束    不支持     支持
         表空间占用   相对小     相对大，最大2倍
         全文索引    支持      不支持
-
+        
+    事物处理：
+        create table tab1(id int auto_increment primary key,name varchar(10),age int) engine=InnoDB;
+        set autocommit=0;                       //取消自动提交
+        start transaction;                      //开启事物处理
+        insert into tab1 values(null,"aaa",20); //操作数据
+        rollback;                               //撤销刚才的操作
+        commit;                                 //手动提交操作
+        
 #MySQL默认字符集
         查看MySQL支持的字符集   show character set;
         ACSII
